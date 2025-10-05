@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CV de Babacar NDIAYE - Ingénieur Logiciel Full Stack">
     <title>CV - Babacar NDIAYE</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -34,12 +35,20 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .download-btn:hover {
             background: #004182;
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+
+        .download-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
         }
 
         .container {
@@ -227,30 +236,10 @@
             text-decoration: underline;
         }
 
-        @media print {
-            body {
-                background: white;
-            }
-            .container {
-                box-shadow: none;
-                margin: 0;
-                max-width: 100%;
-            }
-            .download-btn {
-                display: none;
-            }
-            .main-content {
-                page-break-inside: avoid;
-            }
-            .experience-item, .formation-item, .project-item {
-                page-break-inside: avoid;
-            }
-        }
-
         @media (max-width: 768px) {
             .download-btn {
                 position: static;
-                width: 100%;
+                width: calc(100% - 20px);
                 margin: 10px;
                 border-radius: 0;
             }
@@ -269,9 +258,12 @@
     </style>
 </head>
 <body>
-    <button class="download-btn" onclick="downloadPDF()">📥 Télécharger PDF</button>
+    <button class="download-btn" onclick="generatePDF()" id="downloadBtn">
+        <span>📥</span>
+        <span>Télécharger PDF</span>
+    </button>
     
-    <div class="container">
+    <div class="container" id="cv-content">
         <header class="header">
             <h1>Babacar NDIAYE</h1>
             <div class="title">Ingénieur Logiciel Full Stack • Formateur IT</div>
@@ -558,8 +550,44 @@
     </div>
 
     <script>
-        function downloadPDF() {
-            window.print();
+        function generatePDF() {
+            const button = document.getElementById('downloadBtn');
+            const buttonText = button.querySelector('span:last-child');
+            const originalText = buttonText.textContent;
+            
+            // Désactiver le bouton et changer le texte
+            button.disabled = true;
+            buttonText.textContent = 'Génération en cours...';
+            
+            const element = document.getElementById('cv-content');
+            
+            const opt = {
+                margin: [10, 10, 10, 10],
+                filename: 'CV_Babacar_NDIAYE.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait'
+                },
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+            };
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Réactiver le bouton après la génération
+                button.disabled = false;
+                buttonText.textContent = originalText;
+            }).catch((error) => {
+                console.error('Erreur lors de la génération du PDF:', error);
+                button.disabled = false;
+                buttonText.textContent = originalText;
+                alert('Erreur lors de la génération du PDF. Veuillez réessayer.');
+            });
         }
     </script>
 </body>
