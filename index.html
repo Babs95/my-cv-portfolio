@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV de Babacar NDIAYE - Ingénieur Logiciel Full Stack">
+    <title>CV - Babacar NDIAYE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #0a66c2;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            background: #004182;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0a66c2 0%, #004182 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header .title {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-right: 3px solid #0a66c2;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            color: #0a66c2;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #0a66c2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .profile-text {
+            text-align: justify;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .experience-item, .formation-item, .project-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child, .formation-item:last-child, .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #0a66c2;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .period {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            color: #888;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            margin-top: 8px;
+            color: #0a66c2;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .tech-stack a {
+            color: #0a66c2;
+            text-decoration: none;
+        }
+
+        .tech-stack a:hover {
+            text-decoration: underline;
+        }
+
+        .skills-category {
+            margin-bottom: 25px;
+        }
+
+        .skills-category h3 {
+            color: #0a66c2;
+            font-size: 1em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            padding: 6px 0;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skills-list li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #0a66c2;
+            font-weight: bold;
+        }
+
+        .languages div {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            color: #555;
+        }
+
+        .links-section a {
+            display: block;
+            color: #0a66c2;
+            text-decoration: none;
+            padding: 8px 0;
+            word-break: break-all;
+            font-size: 0.85em;
+        }
+
+        .links-section a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+            }
+            .download-btn {
+                display: none;
+            }
+            .main-content {
+                page-break-inside: avoid;
+            }
+            .experience-item, .formation-item, .project-item {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .download-btn {
+                position: static;
+                width: 100%;
+                margin: 10px;
+                border-radius: 0;
+            }
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 3px solid #0a66c2;
+            }
+            .container {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadPDF()">📥 Télécharger PDF</button>
+    
+    <div class="container">
+        <header class="header">
+            <h1>Babacar NDIAYE</h1>
+            <div class="title">Ingénieur Logiciel Full Stack • Formateur IT</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+221 77 144 02 91</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>babacar.ndiayepro07@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Liberté VI Extension, Dakar, Sénégal</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <section class="section">
+                    <h2 class="section-title">Compétences</h2>
+                    
+                    <div class="skills-category">
+                        <h3>Frontend & Mobile</h3>
+                        <ul class="skills-list">
+                            <li>Angular</li>
+                            <li>Ionic</li>
+                            <li>Flutter / Dart</li>
+                            <li>HTML5 / CSS3 / SCSS</li>
+                            <li>JavaScript / TypeScript</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Backend</h3>
+                        <ul class="skills-list">
+                            <li>Java / Spring Boot / Spring Cloud</li>
+                            <li>PHP / Laravel / Lumen / Symfony</li>
+                            <li>Django REST</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Base de données</h3>
+                        <ul class="skills-list">
+                            <li>PostgreSQL</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Outils & Méthodologies</h3>
+                        <ul class="skills-list">
+                            <li>Git / Docker</li>
+                            <li>JUnit / Mockito</li>
+                            <li>Camunda BPMN</li>
+                            <li>Redis / Websocket</li>
+                            <li>Keycloak / SSO</li>
+                            <li>Sonar / Flyway</li>
+                            <li>Méthodes Agiles</li>
+                            <li>UML / Merise</li>
+                            <li>LADM</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Langues</h2>
+                    <div class="languages">
+                        <div>
+                            <span>Français</span>
+                            <span><strong>Courant</strong></span>
+                        </div>
+                        <div>
+                            <span>Anglais</span>
+                            <span><strong>Intermédiaire</strong></span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Liens</h2>
+                    <div class="links-section">
+                        <a href="https://www.linkedin.com/in/babacar-ndiaye-8abb2a160/" target="_blank">🔗 LinkedIn</a>
+                        <a href="https://babacar-ndiaye-portfolio.vercel.app/" target="_blank">🌐 Portfolio</a>
+                        <a href="https://github.com/Babs95" target="_blank">💻 GitHub</a>
+                        <a href="https://medium.com/@babsco95" target="_blank">📝 Medium</a>
+                    </div>
+                </section>
+            </aside>
+
+            <main class="content">
+                <section class="section">
+                    <h2 class="section-title">Profil Professionnel</h2>
+                    <p class="profile-text">
+                        Ingénieur Logiciel diplômé de l'Institut Supérieur d'Informatique ISI Dakar, spécialisé dans le développement Full Stack Web et Mobile. Ma formation d'ingénieur, basée sur le modèle d'alternance école/entreprise, ainsi que mes expériences professionnelles variées m'ont permis d'acquérir une solide expertise en analyse, conception et développement d'applications. Passionné par les technologies modernes, je maîtrise aussi bien les frameworks backend (Spring Boot, Laravel) que frontend (Angular, Flutter). Convaincu par l'esprit d'équipe, je crois fermement qu'en unissant nos compétences, nous pouvons atteindre nos objectifs et réaliser des projets exceptionnels.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Expériences Professionnelles</h2>
+
+                    <div class="experience-item">
+                        <div class="job-title">Ingénieur Backend / Lead Backend</div>
+                        <div class="company">Modelsis</div>
+                        <div class="period">Février 2024 - Présent</div>
+                        <div class="location">Dakar, Sénégal</div>
+                        <div class="description">
+                            Développement du système de gestion du foncier sénégalais (SGF) pour la Direction Générale des Impôts et Domaines (DGID). Gestion complète de la partie backend incluant la conception, le développement et l'intégration de la base de données.
+                        </div>
+                        <div class="tech-stack">Technologies : Camunda, BPMN, LADM, Spring Boot, Flyway, JUnit, Sonar, PostgreSQL, Redis, WebSocket</div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Consultant Ingénieur Logiciel</div>
+                        <div class="company">ATOS (CDD)</div>
+                        <div class="period">Janvier 2023 - Octobre 2023</div>
+                        <div class="location">Dakar, Sénégal</div>
+                        <div class="description">
+                            Conception et développement du Guichet Unique de Financement (GUF) pour l'ADPME en partenariat avec la coopération GIZ. Mise en place d'une architecture microservices avec Spring Cloud.
+                        </div>
+                        <div class="tech-stack">Technologies : Spring Boot, Spring Cloud, Angular, JUnit, Mockito, Sonar, Docker, PostgreSQL</div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Consultant Ingénieur Logiciel</div>
+                        <div class="company">Sénégal Numérique S.A. (ex-ADIE)</div>
+                        <div class="period">Janvier 2022 - Janvier 2023</div>
+                        <div class="location">Dakar, Sénégal</div>
+                        <div class="description">
+                            Développement du Guichet Unique Sénégal Services permettant aux citoyens d'effectuer leurs démarches administratives. Création du backend et de l'application mobile.
+                        </div>
+                        <div class="tech-stack">Technologies : Laravel, Lumen, Flutter, MySQL</div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Formateur en Génie Informatique</div>
+                        <div class="company">Institut Polytechnique Panafricain (IPP)</div>
+                        <div class="period">Mars 2025 - Présent</div>
+                        <div class="location">Dakar, Sénégal</div>
+                        <div class="description">
+                            Formation des étudiants en Génie Informatique. Enseignement des fondamentaux du développement logiciel, conception de systèmes informatiques et technologies web/mobile modernes.
+                        </div>
+                        <div class="tech-stack">Domaines : Génie Informatique, Développement web et mobile, Conception de systèmes</div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Formateur en Développement Web & Mobile</div>
+                        <div class="company">GROUPE SUP'INFO SENEGAL</div>
+                        <div class="period">Mai 2023 - Présent</div>
+                        <div class="location">Région de Dakar, Sénégal - Hybride</div>
+                        <div class="description">
+                            Formation des étudiants aux technologies web et mobile modernes. Enseignement des frameworks et langages comme Flutter, Dart, Laravel, Java, bases de données et algorithmes.
+                        </div>
+                        <div class="tech-stack">Domaines : Applications web, Firebase, Java, Flutter, Dart, Laravel, Base de données, PostgreSQL, Spring Boot, Flyway</div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Formateur en Développement Web & Mobile</div>
+                        <div class="company">Groupe ISI</div>
+                        <div class="period">Février 2022 - Présent</div>
+                        <div class="location">Région de Dakar, Sénégal - Hybride</div>
+                        <div class="description">
+                            Formation des étudiants en développement web et mobile. Enseignement des langages de programmation (PHP, Java, JavaScript, C, C++, SQL), des bases de données, UML et algorithmes.
+                        </div>
+                        <div class="tech-stack">Domaines : PHP, Java, JavaScript, C, C++, SQL, MySQL, Git, Base de données, UML, Algorithmes</div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Ingénieur Logiciel</div>
+                        <div class="company">IDEV Technologies (Groupe IDEV)</div>
+                        <div class="period">Janvier 2021 - Février 2024</div>
+                        <div class="location">Dakar, Sénégal</div>
+                        <div class="description">
+                            Conception et développement d'applications de gestion pour divers secteurs : assurance, banque, éducation (EKARANTA), et transfert d'argent. Participation active à toutes les phases du cycle de développement.
+                        </div>
+                        <div class="tech-stack">Technologies : Angular, Ionic, Symfony, Laravel, Django REST, Flutter</div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Développeur Web</div>
+                        <div class="company">Ringier One Africa Media (ROAM)</div>
+                        <div class="period">Septembre 2018 - Mars 2019</div>
+                        <div class="location">Dakar, Sénégal</div>
+                        <div class="description">
+                            Gestion et maintenance du site web Mamaison. Correction de bugs, développement de nouvelles fonctionnalités et formation des clients.
+                        </div>
+                        <div class="tech-stack">Technologies : PHP, JavaScript, HTML5, CSS3</div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Développeur Freelance</div>
+                        <div class="company">NLD Software</div>
+                        <div class="period">Avril 2018 - Présent</div>
+                        <div class="location">Dakar, Sénégal</div>
+                        <div class="description">
+                            Réalisation de projets pour clients personnels en développement web et mobile.
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Projets Freelance Notables</h2>
+
+                    <div class="project-item">
+                        <div class="job-title">Plateforme Visite Technique</div>
+                        <div class="period">Février 2022 - Juillet 2022</div>
+                        <div class="description">
+                            Développement d'une plateforme complète de gestion de contrôle technique pour véhicules et chauffeurs.
+                        </div>
+                        <div class="tech-stack">
+                            Technologies : Angular 11, Laravel • 
+                            <a href="https://visitetechnique.com" target="_blank">visitetechnique.com</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="job-title">Application Mobile Taxis Nantes</div>
+                        <div class="period">Novembre 2021 - Janvier 2022</div>
+                        <div class="description">
+                            Création d'une application mobile pour la gestion d'une compagnie de taxis à Nantes.
+                        </div>
+                        <div class="tech-stack">
+                            Technologies : Ionic, Laravel • 
+                            <a href="https://taxis-nantes.com" target="_blank">taxis-nantes.com</a>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="job-title">Plateforme SOUMARI</div>
+                        <div class="period">Octobre 2021 - Octobre 2024</div>
+                        <div class="description">
+                            Conception et développement d'une solution complète incluant application mobile, back-office et backend.
+                        </div>
+                        <div class="tech-stack">
+                            Technologies : Flutter, Angular, Laravel • 
+                            <a href="https://www.soumari.com" target="_blank">soumari.com</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Formation</h2>
+
+                    <div class="formation-item">
+                        <div class="job-title">Master 2 en Génie Logiciel</div>
+                        <div class="company">Institut Supérieur d'Informatique (ISI)</div>
+                        <div class="period">2020 - 2021</div>
+                        <div class="location">Dakar, Sénégal</div>
+                    </div>
+
+                    <div class="formation-item">
+                        <div class="job-title">Master 1 en Génie Logiciel</div>
+                        <div class="company">Institut Supérieur d'Informatique (ISI)</div>
+                        <div class="period">2019 - 2020</div>
+                        <div class="location">Dakar, Sénégal</div>
+                    </div>
+
+                    <div class="formation-item">
+                        <div class="job-title">Licence en Génie Logiciel</div>
+                        <div class="company">Institut Supérieur d'Informatique (ISI)</div>
+                        <div class="period">2018 - 2019</div>
+                        <div class="location">Dakar, Sénégal</div>
+                    </div>
+
+                    <div class="formation-item">
+                        <div class="job-title">DTS en Informatique de Gestion & Réseau</div>
+                        <div class="company">Institut Supérieur d'Informatique (ISI)</div>
+                        <div class="period">2017 - 2018</div>
+                        <div class="location">Dakar, Sénégal</div>
+                    </div>
+
+                    <div class="formation-item">
+                        <div class="job-title">Baccalauréat Série S2</div>
+                        <div class="company">Collège Saint Gabriel</div>
+                        <div class="period">2015 - 2016</div>
+                        <div class="location">Thiès, Sénégal</div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
