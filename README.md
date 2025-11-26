@@ -1,16 +1,61 @@
-# React + Vite
+# CV Portfolio en ligne
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application web pour gérer et publier mon CV en ligne de manière professionnelle et interactive.
 
-Currently, two official plugins are available:
+## Démo en ligne
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 [Voir mon CV](https://babs95.github.io/my-cv-portfolio/)
 
-## React Compiler
+## À propos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Ce projet permet de présenter mon CV de manière moderne et interactive sur le web. Il offre une expérience utilisateur optimale pour consulter mon parcours professionnel et télécharger mon CV en format PDF.
 
-## Expanding the ESLint configuration
+## Fonctionnalités
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Présentation interactive du CV
+- Téléchargement du CV en format PDF
+- Interface moderne et responsive
+- Navigation fluide entre les sections
+- Compatible tous navigateurs et appareils
+
+## Technologies utilisées
+
+- **React** 19.2.0 - Framework JavaScript
+- **Vite** 7.2.4 - Outil de build
+- **PDFMake** - Génération de PDF
+- **GitHub Pages** - Hébergement
+
+## Installation locale
+
+```bash
+# Cloner le projet
+git clone https://github.com/Babs95/my-cv-portfolio.git
+cd my-cv-portfolio
+
+# Installer les dépendances
+npm install
+
+# Lancer en mode développement
+npm run dev
+```
+
+## Commandes disponibles
+
+- `npm run dev` - Serveur de développement
+- `npm run build` - Build de production
+- `npm run preview` - Prévisualiser le build
+- `npm run deploy` - Déployer sur GitHub Pages
+
+## Déploiement
+
+Pour mettre à jour le CV en ligne :
+
+```bash
+npm run deploy
+```
+
+Cette commande va automatiquement créer un build et le publier sur GitHub Pages.
+
+## Contact
+
+Pour me contacter ou consulter mes autres projets, visitez mon profil [GitHub](https://github.com/Babs95).
