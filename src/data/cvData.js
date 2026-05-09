@@ -128,9 +128,16 @@ export const cvData = {
             description: "Solution complète avec 8 000+ utilisateurs actifs, 20 000 transactions traitées et 50 marchands partenaires",
             tech: "Flutter, Angular, Laravel",
             url: "https://soumari.com"
+          },
+          {
+            name: "Pontify",
+            period: "(Mar 2026 - Présent)",
+            description: "PWA mobile-first d'optimisation de congés couvrant 15 pays (Afrique francophone, Europe, Amérique). Moteur algorithmique de détection de ponts, suggestions triées par ratio gain/coût, notifications push VAPID, compte & sauvegarde cloud",
+            tech: "React 19, Vite 7, Tailwind CSS 4, Supabase, Zustand, Vercel, PWA",
+            url: "https://pontify.work"
           }
         ],
-         tech: "Technologies : Spring Boot, Flutter, Angular, Laravel, NodeJs, NestJs, Flyway, JUnit, Sonar, PostgreSQL, MongoDB, Redis, WebSocket, BPMN",
+         tech: "Technologies : Spring Boot, Flutter, Angular, React, Laravel, NodeJs, NestJs, Flyway, JUnit, Sonar, PostgreSQL, MongoDB, Redis, WebSocket, BPMN",
         achievements: []
       }
     ],
@@ -335,9 +342,16 @@ export const cvData = {
             description: "Complete solution with 8,000+ active users, 20,000 transactions processed and 50 partner merchants",
             tech: "Flutter, Angular, Laravel",
             url: "https://soumari.com"
+          },
+          {
+            name: "Pontify",
+            period: "(Mar 2026 - Present)",
+            description: "Mobile-first PWA for vacation optimization covering 15 countries (Francophone Africa, Europe, Americas). Algorithmic bridge-detection engine, suggestions ranked by gain/cost ratio, VAPID push notifications, cloud account & sync",
+            tech: "React 19, Vite 7, Tailwind CSS 4, Supabase, Zustand, Vercel, PWA",
+            url: "https://pontify.work"
           }
         ],
-        tech: "Technologies: Spring Boot, Flutter, Angular, Laravel, NodeJs, NestJs, Flyway, JUnit, Sonar, PostgreSQL, MongoDB, Redis, WebSocket, BPMN",
+        tech: "Technologies: Spring Boot, Flutter, Angular, React, Laravel, NodeJs, NestJs, Flyway, JUnit, Sonar, PostgreSQL, MongoDB, Redis, WebSocket, BPMN",
         achievements: []
       }
     ],
